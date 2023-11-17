@@ -19,8 +19,11 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  if (value === '' || value === null || value === undefined) {
+    return 0;
+  }
+  return value.length;
 }
 
 /**
@@ -53,8 +56,8 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1.concat(value2);
 }
 
 /**
@@ -68,8 +71,9 @@ function concatenateStrings(/* value1, value2 */) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value.charAt(0);
+  // return value.substring(0, 1);
 }
 
 /**
@@ -83,8 +87,8 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
@@ -98,8 +102,8 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  return value.trimStart();
 }
 
 /**
@@ -113,8 +117,8 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  return value.trimEnd();
 }
 
 /**
@@ -130,8 +134,19 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  if (times < 0) {
+    return '';
+  }
+  return str.repeat(times);
+  // let result = '';
+  // for (let i = 0; i < times; i += 1) {
+  //   if (str === '' || times < 0) {
+  //     return '';
+  //   }
+  //   result += str;
+  // }
+  // return result;
 }
 
 /**
@@ -239,8 +254,8 @@ function formatTime(/* minutes, seconds */) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
 
 /**
@@ -463,8 +478,166 @@ function encodeToRot13(/* str */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  // const cards = {'A♣': 0,'2♣': 1,'3♣': 2,'4♣': 3,'5♣': 4,'6♣': 5,'7♣': 6,'8♣': 7,'9♣': 8,'10♣': 9,'J♣': 10,'Q♣': 11,'K♣': 12,
+  // 'A♦': 13,'2♦': 14,'3♦': 15,'4♦': 16,'5♦': 17,'6♦': 18,'7♦': 19,'8♦': 20,'9♦': 21,'10♦': 22,'J♦': 23,'Q♦': 24,'K♦': 25,
+  // 'A♥': 26,'2♥': 27,'3♥': 28,'4♥': 29,'5♥': 30,'6♥': 31,'7♥': 32,'8♥': 33,'9♥': 34,'10♥': 35,'J♥': 36,'Q♥': 37,'K♥': 38,
+  // 'A♠': 39,'2♠': 40,'3♠': 41,'4♠': 42,'5♠': 43,'6♠': 44,'7♠': 45,'8♠': 46,'9♠': 47,'10♠': 48,'J♠': 49,'Q♠': 50,'K♠': 51};
+
+  if (value === 'A♣') {
+    return 0;
+  }
+  if (value === '2♣') {
+    return 1;
+  }
+  if (value === '3♣') {
+    return 2;
+  }
+  if (value === '4♣') {
+    return 3;
+  }
+  if (value === '5♣') {
+    return 4;
+  }
+  if (value === '6♣') {
+    return 5;
+  }
+  if (value === '7♣') {
+    return 6;
+  }
+  if (value === '8♣') {
+    return 7;
+  }
+  if (value === '9♣') {
+    return 8;
+  }
+  if (value === '10♣') {
+    return 9;
+  }
+  if (value === 'J♣') {
+    return 10;
+  }
+  if (value === 'Q♣') {
+    return 11;
+  }
+  if (value === 'K♣') {
+    return 12;
+  }
+  if (value === 'A♦') {
+    return 13;
+  }
+  if (value === '2♦') {
+    return 14;
+  }
+  if (value === '3♦') {
+    return 15;
+  }
+  if (value === '4♦') {
+    return 16;
+  }
+  if (value === '5♦') {
+    return 17;
+  }
+  if (value === '6♦') {
+    return 18;
+  }
+  if (value === '7♦') {
+    return 19;
+  }
+  if (value === '8♦') {
+    return 20;
+  }
+  if (value === '9♦') {
+    return 21;
+  }
+  if (value === '10♦') {
+    return 22;
+  }
+  if (value === 'J♦') {
+    return 23;
+  }
+  if (value === 'Q♦') {
+    return 24;
+  }
+  if (value === 'K♦') {
+    return 25;
+  }
+  if (value === 'A♥') {
+    return 26;
+  }
+  if (value === '2♥') {
+    return 27;
+  }
+  if (value === '3♥') {
+    return 28;
+  }
+  if (value === '4♥') {
+    return 29;
+  }
+  if (value === '5♥') {
+    return 30;
+  }
+  if (value === '6♥') {
+    return 31;
+  }
+  if (value === '7♥') {
+    return 32;
+  }
+  if (value === '8♥') {
+    return 33;
+  }
+  if (value === '9♥') {
+    return 34;
+  }
+  if (value === '10♥') {
+    return 35;
+  }
+  if (value === 'J♥') {
+    return 36;
+  }
+  if (value === 'Q♥') {
+    return 37;
+  }
+  if (value === 'K♥') {
+    return 38;
+  }
+  if (value === 'A♠') {
+    return 39;
+  }
+  if (value === '2♠') {
+    return 40;
+  }
+  if (value === '3♠') {
+    return 41;
+  }
+  if (value === '4♠') {
+    return 42;
+  }
+  if (value === '5♠') {
+    return 43;
+  }
+  if (value === '6♠') {
+    return 44;
+  }
+  if (value === '7♠') {
+    return 45;
+  }
+  if (value === '8♠') {
+    return 46;
+  }
+  if (value === '9♠') {
+    return 47;
+  }
+  if (value === '10♠') {
+    return 48;
+  }
+  if (value === 'J♠') {
+    return 49;
+  }
+  if (value === 'Q♠') {
+    return 50;
+  }
+  return 51;
 }
 
 module.exports = {
