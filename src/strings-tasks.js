@@ -278,7 +278,7 @@ function reverseString(str) {
  */
 function orderAlphabetically(str) {
   const arr = str.split('');
-  const Newarr = arr.toSorted();
+  const Newarr = arr.sort();
   return Newarr.join('');
 }
 
