@@ -276,8 +276,10 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  const arr = str.split('');
+  const Newarr = arr.toSorted();
+  return Newarr.join('');
 }
 
 /**
@@ -310,8 +312,29 @@ function containsSubstring(/* str, substring */) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  let count = 0;
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i += 1) {
+    if (
+      arr[i] === 'A' ||
+      arr[i] === 'a' ||
+      arr[i] === 'E' ||
+      arr[i] === 'e' ||
+      arr[i] === 'I' ||
+      arr[i] === 'i' ||
+      arr[i] === 'O' ||
+      arr[i] === 'o' ||
+      arr[i] === 'U' ||
+      arr[i] === 'u' ||
+      arr[i] === 'Y' ||
+      arr[i] === 'y'
+    ) {
+      count += 1;
+    }
+    arr[i] += 1;
+  }
+  return count;
 }
 
 /**
